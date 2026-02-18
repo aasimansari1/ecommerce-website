@@ -25,8 +25,11 @@ export default function Products() {
 
   const categories = [...new Set(products.map((p) => p.category))];
 
+  const q = search.toLowerCase();
   let filtered = products.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
+    p.name.toLowerCase().includes(q) ||
+    p.description.toLowerCase().includes(q) ||
+    p.category.toLowerCase().includes(q)
   );
   if (category) filtered = filtered.filter((p) => p.category === category);
   if (sort === 'low') filtered.sort((a, b) => a.price - b.price);
