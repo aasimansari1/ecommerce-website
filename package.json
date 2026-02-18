@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Ecommerce MVP",
   "scripts": {
+    "start": "cd server && node server.js",
+    "build": "cd client && npm install && npm run build",
     "server": "cd server && node server.js",
     "client": "cd client && npx react-scripts start",
     "dev": "npx concurrently \"npm run server\" \"npm run client\"",
